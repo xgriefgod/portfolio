@@ -72,7 +72,30 @@
             background: rgba(0, 0, 0, 0.25);
             z-index: 0;
         }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        iframe {
+            display: block;
+            width: 100%;
+            height: 100vh; /* Or adjust to fit */
+        }
 
+        video {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
         .footer {
             position: absolute;
             top: 50%;
@@ -156,5 +179,28 @@
             bgVideo.classList.add('loaded');
         });
     </script>
+    <script>
+        document.addEventListener("visibilitychange", function () {
+            var iframe = document.getElementById("bgVideo");
+            if (document.visibilityState === "visible") {
+                iframe.src = iframe.src; // Reloads the video to keep it playing
+            }
+        });
+    </script>
+    <script>
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('bgVideo', {
+                events: {
+                    'onStateChange': function(event) {
+                        if (event.data === YT.PlayerState.PAUSED) {
+                            player.playVideo();
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+    <script src="https://www.youtube.com/iframe_api"></script>
 </body>
 </html>
