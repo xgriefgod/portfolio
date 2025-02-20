@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior Technical Cinematic Designer</title>
+    <title>Gabriel Hencz - Senior Technical Cinematic Designer</title>
     <style>
         body {
             margin: 0;
@@ -44,6 +44,12 @@
             height: 100%;
             object-fit: cover;
             pointer-events: none;
+            opacity: 0; /* Initial opacity set to 0 */
+            transition: opacity 2s ease-in-out; /* Smooth fade-in transition */
+        }
+
+        #bgVideo.loaded {
+            opacity: 1; /* Full opacity when video is loaded */
         }
 
         @media (max-width: 1080px) {
@@ -89,7 +95,7 @@
         }
 
         .icon-link:hover {
-            transform: scale(1.25);
+            transform: scale(1.33);
             opacity: 0.8;
         }
 
@@ -126,7 +132,7 @@
 <body>
     <section class="hero">
         <div id="bgVideoContainer">
-            <iframe id="bgVideo" width="560" height="315"
+            <iframe id="bgVideo" width="1920" height="1080"
             src="https://www.youtube-nocookie.com/embed/04q1LKgyDAg?start=58&vq=hd2160&autoplay=1&color=white&controls=0&disablekb=1&fs=0&loop=1&modestbranding=1&mute=1&autohide=1&playlist=04q1LKgyDAg&playsinline=1&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen">
             </iframe>
         </div>
