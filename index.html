@@ -72,6 +72,20 @@
             background: rgba(0, 0, 0, 0.25);
             z-index: 0;
         }
+        
+        .visitor-counter {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .visitor-counter {
+                display: none;
+            }
+        }
+
         .video-container {
             position: relative;
             width: 100%;
@@ -160,6 +174,13 @@
             </iframe>
         </div>
         <div class="overlay"></div>
+
+        <!-- Visitor Counter -->
+        <div class="visitor-counter">
+            <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=127fefcb4285d036e2ad62aeb92f0b8d35cb619c'></script>
+            <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1305068/t/1"></script>
+        </div>
+
         <footer class="footer">
             <a href="https://www.linkedin.com/in/gabriel-hencz/" target="_blank" class="icon-link">
                 <div class="icon linkedin"></div>
